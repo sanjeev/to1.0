@@ -6,7 +6,6 @@ import T3dr from "../../../assets/images/T3dr.png";
 
 const Sidebar = () => {
 
-
     return (
         <><div className="left-side-menu">
             <div className="h-100 menuitem-active" data-simplebar="init">
@@ -162,12 +161,9 @@ const Sidebar = () => {
                                         <ul id="side-menu">
                                             {/* <li class="menu-title">Navigation</li> */}
                                             <li className="menuitem-active">
-                                                <a
-                                                    href="#sidebarDashboard"
-                                                    data-bs-toggle="collapse"
-                                                    aria-expanded="false"
-                                                    className="collapsed"
-                                                >
+                                                <Link to="/dashboard">
+
+
 
                                                     <svg
                                                         xmlns="http://www.w3.org/2000/svg"
@@ -186,7 +182,7 @@ const Sidebar = () => {
                                                     </svg>
                                                     <span> Dashboards </span>
                                                     {/* <span class="menu-arrow"></span> */}
-                                                </a>
+                                                </Link>
                                             </li>
                                             {/*
                                             <li>
@@ -637,7 +633,7 @@ const Sidebar = () => {
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="charts.html">
+                                                <Link to="/submit-new-plan">
                                                     <svg
                                                         xmlns="http://www.w3.org/2000/svg"
                                                         width={24}
@@ -655,7 +651,7 @@ const Sidebar = () => {
                                                         <line x1={6} y1={20} x2={6} y2={14} />
                                                     </svg>
                                                     <span> Submit New Plan </span>
-                                                </a>
+                                                </Link>
                                             </li>
                                             <li>
                                                 <a href="charts.html">

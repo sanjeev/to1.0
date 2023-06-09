@@ -4,8 +4,10 @@ import { Link } from "react-router-dom";
 import logoDark from "../../assets/images/logo-dark.png";
 import T3dr from "../../assets/images/T3dr.png";
 import logoLight from "../../assets/images/logo-light.png";
+import { useNavigate } from "react-router-dom";
 const Login = () => {
 
+    let navigate = useNavigate();
     useEffect(() => {
         if (document.body) document.body.classList.add("authentication-bg");
 
@@ -87,7 +89,9 @@ const Login = () => {
                                                 </div>
                                             </div>
                                             <div className="mb-3 text-center d-grid">
-                                                <button className="btn btn-primary" type="submit">
+                                                <button className="btn btn-primary" type="submit" onClick={() => {
+                                                    navigate(`/dashboard`);
+                                                }}>
                                                     Log In
                                                 </button>
                                             </div>

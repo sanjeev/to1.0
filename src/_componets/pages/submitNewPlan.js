@@ -19,7 +19,7 @@ const SubmitNewPlan = () => {
     ];
     return (
         <>
-            <Card className="mt-2">
+            <Card className="mt-2 mt2to">
                 <Card.Body>
                     <form>
                         <div className="row">
