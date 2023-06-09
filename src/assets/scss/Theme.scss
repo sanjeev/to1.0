@@ -1,0 +1,22 @@
+// Styles
+
+// Main styles
+
+@import './bootstrap.scss';
+@import './app.scss';
+
+// Shreyu Icons
+@import './icons.scss';
+
+.cl {
+    display: flex;
+    justify-content: flex-end;
+}
+.authentication-bg{
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-bottom: 0;
+    background-image: url(https://static3.toyotabharat.com/images/homepage/banners/new-innova-crysta-banner-1920x807.jpg);
+    background-repeat: no-repeat;
+    background-position: 0px 0px, 50% 50%;
+}
