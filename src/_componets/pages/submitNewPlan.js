@@ -18,8 +18,15 @@ const SubmitNewPlan = () => {
 
     ];
     return (
-        <>
-            <Card className="mt-2 mt2to">
+        <><Row className="page-title align-items-center">
+            <Col sm={12} xl={12}>
+                <h4 className="mb-1 mt-0">  Submit New Plan  </h4>
+            </Col>
+
+        </Row>
+
+            <Card className="mt-2 ">
+                {/* mt2to */}
                 <Card.Body>
                     <form>
                         <div className="row">
@@ -278,6 +285,9 @@ const SubmitNewPlan = () => {
                     </form>
                 </Card.Body>
             </Card>
+
+
+
         </>
     );
 };

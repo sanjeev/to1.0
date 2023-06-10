@@ -639,45 +639,8 @@ const Header = () => {
                             {/* End mobile menu toggle*/}
                         </li>
                         <li className="dropdown d-none d-xl-block">
-                            <a
-                                className="nav-link dropdown-toggle"
-                                data-bs-toggle="dropdown"
-                                href="#"
-                                role="button"
-                                aria-haspopup="false"
-                                aria-expanded="false"
-                            >
-                                Create New
-                                <i className="uil uil-angle-down" />
-                            </a>
-                            <div className="dropdown-menu">
-                                {/* item*/}
-                                <a href="javascript:void(0);" className="dropdown-item">
-                                    <i className="uil uil-bag me-1" />
-                                    <span>New Projects</span>
-                                </a>
-                                {/* item*/}
-                                <a href="javascript:void(0);" className="dropdown-item">
-                                    <i className="uil uil-user-plus me-1" />
-                                    <span>Create Users</span>
-                                </a>
-                                {/* item*/}
-                                <a href="javascript:void(0);" className="dropdown-item">
-                                    <i className="uil uil-chart-pie me-1" />
-                                    <span>Revenue Report</span>
-                                </a>
-                                {/* item*/}
-                                <a href="javascript:void(0);" className="dropdown-item">
-                                    <i className="uil uil-cog me-1" />
-                                    <span>Settings</span>
-                                </a>
-                                <div className="dropdown-divider" />
-                                {/* item*/}
-                                <a href="javascript:void(0);" className="dropdown-item">
-                                    <i className="uil uil-question-circle me-1" />
-                                    <span>Help &amp; Support</span>
-                                </a>
-                            </div>
+                            <img src={T3dr} alt="" height={50} style={{ margin: '15px 0px 0px' }} />
+
                         </li>
                     </ul>
                     <div className="clearfix" />

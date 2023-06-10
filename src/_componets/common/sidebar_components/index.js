@@ -612,7 +612,7 @@ const Sidebar = () => {
                                                 </div>
                                             </li> */}
                                             <li>
-                                                <a href="charts.html">
+                                                <Link to="/submitted-plans">
                                                     <svg
                                                         xmlns="http://www.w3.org/2000/svg"
                                                         width={24}
@@ -630,7 +630,7 @@ const Sidebar = () => {
                                                         <line x1={6} y1={20} x2={6} y2={14} />
                                                     </svg>
                                                     <span> Submitted Plans/Claims List </span>
-                                                </a>
+                                                </Link>
                                             </li>
                                             <li>
                                                 <Link to="/submit-new-plan">
@@ -654,7 +654,7 @@ const Sidebar = () => {
                                                 </Link>
                                             </li>
                                             <li>
-                                                <a href="charts.html">
+                                                <Link to="/dashboard">
                                                     <svg
                                                         xmlns="http://www.w3.org/2000/svg"
                                                         width={24}
@@ -672,9 +672,10 @@ const Sidebar = () => {
                                                         <line x1={6} y1={20} x2={6} y2={14} />
                                                     </svg>
                                                     <span> FAQ'S </span>
-                                                </a>
-                                            </li>     <li>
-                                                <a href="charts.html">
+                                                </Link>
+                                            </li>
+                                            <li>
+                                                <Link to="/dashboard">
                                                     <svg
                                                         xmlns="http://www.w3.org/2000/svg"
                                                         width={24}
@@ -692,7 +693,7 @@ const Sidebar = () => {
                                                         <line x1={6} y1={20} x2={6} y2={14} />
                                                     </svg>
                                                     <span> Support </span>
-                                                </a>
+                                                </Link>
                                             </li>
                                             {/* <li>
                                                 <a href="#sidebarTables" data-bs-toggle="collapse">

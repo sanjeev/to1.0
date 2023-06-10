@@ -24,3 +24,39 @@
     width: 1100px;
     margin: 0 auto;
 }
+span.badge.bg-warning {
+    font-size: 15px;
+    font-weight: 900;
+}
+.card-header.bg-danger.text-white {
+    font-size: 15px;
+    font-weight: 900;
+}
+.cdl{
+    font-weight: 900;
+}
+.card-header.bg-danger.text-white {
+    background: #e30611 !important;
+}
+.p-3.media {
+    display: flex;
+    justify-content: space-between;
+}
+.custom-control.custom-checkbox {
+    display: flex;
+    justify-content: space-between;
+}
+label {
+    font-weight: 500 !important;
+}
+.page-title {
+    padding: 20px 0;
+}
+span.badge.bg-success {
+    font-size: 15px;
+    font-weight: 900;
+}
+.grop{
+    max-height: 729px;
+    overflow-y: scroll;
+}

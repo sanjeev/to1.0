@@ -4,6 +4,7 @@ import Login from '../_componets/auth/login';
 import Layouts from "../_componets/layouts";
 import Dashboard from "../_componets/pages/dashboard";
 import SubmitNewPlan from "../_componets/pages/submitNewPlan";
+import SubmittedPlan from "../_componets/pages/submittedPlan"
 
 const AllRoutes = () => {
 
@@ -14,6 +15,7 @@ const AllRoutes = () => {
                     <Route path='/' element={<Login />} />
                     <Route path='/dashboard' element={<Layouts><Dashboard /></Layouts>} />
                     <Route path='/submit-new-plan' element={<Layouts><SubmitNewPlan /></Layouts>} />
+                    <Route path='/submitted-plans' element={<Layouts><SubmittedPlan /></Layouts>} />
 
                 </Routes>
             </BrowserRouter>
