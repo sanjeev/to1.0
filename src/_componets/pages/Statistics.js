@@ -13,8 +13,12 @@ import StatisticsChartWidget2 from '../StatisticsChartWidget2';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBullhorn } from '@fortawesome/free-solid-svg-icons'
 import { faBell } from '@fortawesome/free-solid-svg-icons'
+import { faSackDollar } from '@fortawesome/free-solid-svg-icons'
+
+
 import TaskList from '../TaskList';
 import TaskItem from '../TaskItem';
+
 const Statistics = () => {
     return <React.Fragment>
 
@@ -30,8 +34,8 @@ const Statistics = () => {
                                         <div className="d-flex">
                                             <div className="text-center me-1 flex-shrink-0">
                                                 <div className="avatar-sm">
-                                                    <span className="avatar-title rounded-circle bg-soft-primary text-primary">
-                                                        09
+                                                    <span className="avatar-title rounded-circle bg-soft-success text-success">
+                                                        <FontAwesomeIcon icon={faSackDollar} />
                                                     </span>
                                                 </div>
                                             </div>
@@ -54,7 +58,7 @@ const Statistics = () => {
                                             <div className="text-center me-1 flex-shrink-0">
                                                 <div className="avatar-sm">
                                                     <span className="avatar-title rounded-circle bg-soft-primary text-primary">
-                                                        09
+                                                        <FontAwesomeIcon icon={faSackDollar} />
                                                     </span>
                                                 </div>
                                             </div>
@@ -92,8 +96,8 @@ const Statistics = () => {
                                         <div className="d-flex">
                                             <div className="text-center me-1 flex-shrink-0">
                                                 <div className="avatar-sm">
-                                                    <span className="avatar-title rounded-circle bg-soft-primary text-primary">
-                                                        09
+                                                    <span className="avatar-title rounded-circle bg-soft-warning text-warning">
+                                                        <FontAwesomeIcon icon={faSackDollar} />
                                                     </span>
                                                 </div>
                                             </div>
@@ -115,8 +119,8 @@ const Statistics = () => {
                                         <div className="d-flex">
                                             <div className="text-center me-1 flex-shrink-0">
                                                 <div className="avatar-sm">
-                                                    <span className="avatar-title rounded-circle bg-soft-primary text-primary">
-                                                        09
+                                                    <span className="avatar-title rounded-circle bg-soft-success text-success">
+                                                        <FontAwesomeIcon icon={faSackDollar} />
                                                     </span>
                                                 </div>
                                             </div>
@@ -153,7 +157,30 @@ const Statistics = () => {
                                             <div className="text-center me-1 flex-shrink-0">
                                                 <div className="avatar-sm">
                                                     <span className="avatar-title rounded-circle bg-soft-primary text-primary">
-                                                        09
+                                                        <FontAwesomeIcon icon={faSackDollar} />
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div className="flex-grow-1 overflow-hidden">
+
+                                                <p className="text-muted fs-13 text-truncate mb-0">
+                                                    Our pending marketing claims
+                                                </p>
+                                            </div>
+                                            <div className="flex-grow-1 overflow-hidden">
+                                                12
+                                            </div>
+                                            <div className="flex-grow-1 overflow-hidden">
+                                                11,25,0023
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li className="activity-list">
+                                        <div className="d-flex">
+                                            <div className="text-center me-1 flex-shrink-0">
+                                                <div className="avatar-sm">
+                                                    <span className="avatar-title rounded-circle bg-soft-warning text-warning">
+                                                        <FontAwesomeIcon icon={faSackDollar} />
                                                     </span>
                                                 </div>
                                             </div>
@@ -176,7 +203,30 @@ const Statistics = () => {
                                             <div className="text-center me-1 flex-shrink-0">
                                                 <div className="avatar-sm">
                                                     <span className="avatar-title rounded-circle bg-soft-primary text-primary">
-                                                        09
+                                                        <FontAwesomeIcon icon={faSackDollar} />
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div className="flex-grow-1 overflow-hidden">
+
+                                                <p className="text-muted fs-13 text-truncate mb-0">
+                                                    Our pending marketing claims
+                                                </p>
+                                            </div>
+                                            <div className="flex-grow-1 overflow-hidden">
+                                                12
+                                            </div>
+                                            <div className="flex-grow-1 overflow-hidden">
+                                                11,25,0023
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li className="activity-list">
+                                        <div className="d-flex">
+                                            <div className="text-center me-1 flex-shrink-0">
+                                                <div className="avatar-sm">
+                                                    <span className="avatar-title rounded-circle bg-soft-success text-success">
+                                                        <FontAwesomeIcon icon={faSackDollar} />
                                                     </span>
                                                 </div>
                                             </div>
@@ -199,7 +249,7 @@ const Statistics = () => {
                                             <div className="text-center me-1 flex-shrink-0">
                                                 <div className="avatar-sm">
                                                     <span className="avatar-title rounded-circle bg-soft-primary text-primary">
-                                                        09
+                                                        <FontAwesomeIcon icon={faSackDollar} />
                                                     </span>
                                                 </div>
                                             </div>
@@ -221,54 +271,8 @@ const Statistics = () => {
                                         <div className="d-flex">
                                             <div className="text-center me-1 flex-shrink-0">
                                                 <div className="avatar-sm">
-                                                    <span className="avatar-title rounded-circle bg-soft-primary text-primary">
-                                                        09
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <div className="flex-grow-1 overflow-hidden">
-
-                                                <p className="text-muted fs-13 text-truncate mb-0">
-                                                    Our pending marketing claims
-                                                </p>
-                                            </div>
-                                            <div className="flex-grow-1 overflow-hidden">
-                                                12
-                                            </div>
-                                            <div className="flex-grow-1 overflow-hidden">
-                                                11,25,0023
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li className="activity-list">
-                                        <div className="d-flex">
-                                            <div className="text-center me-1 flex-shrink-0">
-                                                <div className="avatar-sm">
-                                                    <span className="avatar-title rounded-circle bg-soft-primary text-primary">
-                                                        09
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <div className="flex-grow-1 overflow-hidden">
-
-                                                <p className="text-muted fs-13 text-truncate mb-0">
-                                                    Our pending marketing claims
-                                                </p>
-                                            </div>
-                                            <div className="flex-grow-1 overflow-hidden">
-                                                12
-                                            </div>
-                                            <div className="flex-grow-1 overflow-hidden">
-                                                11,25,0023
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li className="activity-list">
-                                        <div className="d-flex">
-                                            <div className="text-center me-1 flex-shrink-0">
-                                                <div className="avatar-sm">
-                                                    <span className="avatar-title rounded-circle bg-soft-primary text-primary">
-                                                        09
+                                                    <span className="avatar-title rounded-circle bg-soft-warning text-warning">
+                                                        <FontAwesomeIcon icon={faSackDollar} />
                                                     </span>
                                                 </div>
                                             </div>
@@ -307,7 +311,30 @@ const Statistics = () => {
                                             <div className="text-center me-1 flex-shrink-0">
                                                 <div className="avatar-sm">
                                                     <span className="avatar-title rounded-circle bg-soft-primary text-primary">
-                                                        09
+                                                        <FontAwesomeIcon icon={faSackDollar} />
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div className="flex-grow-1 overflow-hidden">
+
+                                                <p className="text-muted fs-13 text-truncate mb-0">
+                                                    Our pending marketing claims
+                                                </p>
+                                            </div>
+                                            <div className="flex-grow-1 overflow-hidden">
+                                                12
+                                            </div>
+                                            <div className="flex-grow-1 overflow-hidden">
+                                                11,25,0023
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li className="activity-list">
+                                        <div className="d-flex">
+                                            <div className="text-center me-1 flex-shrink-0">
+                                                <div className="avatar-sm">
+                                                    <span className="avatar-title rounded-circle bg-soft-warning text-warning">
+                                                        <FontAwesomeIcon icon={faSackDollar} />
                                                     </span>
                                                 </div>
                                             </div>
@@ -330,7 +357,30 @@ const Statistics = () => {
                                             <div className="text-center me-1 flex-shrink-0">
                                                 <div className="avatar-sm">
                                                     <span className="avatar-title rounded-circle bg-soft-primary text-primary">
-                                                        09
+                                                        <FontAwesomeIcon icon={faSackDollar} />
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div className="flex-grow-1 overflow-hidden">
+
+                                                <p className="text-muted fs-13 text-truncate mb-0">
+                                                    Our pending marketing claims
+                                                </p>
+                                            </div>
+                                            <div className="flex-grow-1 overflow-hidden">
+                                                12
+                                            </div>
+                                            <div className="flex-grow-1 overflow-hidden">
+                                                11,25,0023
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li className="activity-list">
+                                        <div className="d-flex">
+                                            <div className="text-center me-1 flex-shrink-0">
+                                                <div className="avatar-sm">
+                                                    <span className="avatar-title rounded-circle bg-soft-success text-success">
+                                                        <FontAwesomeIcon icon={faSackDollar} />
                                                     </span>
                                                 </div>
                                             </div>
@@ -353,7 +403,7 @@ const Statistics = () => {
                                             <div className="text-center me-1 flex-shrink-0">
                                                 <div className="avatar-sm">
                                                     <span className="avatar-title rounded-circle bg-soft-primary text-primary">
-                                                        09
+                                                        <FontAwesomeIcon icon={faSackDollar} />
                                                     </span>
                                                 </div>
                                             </div>
@@ -375,54 +425,8 @@ const Statistics = () => {
                                         <div className="d-flex">
                                             <div className="text-center me-1 flex-shrink-0">
                                                 <div className="avatar-sm">
-                                                    <span className="avatar-title rounded-circle bg-soft-primary text-primary">
-                                                        09
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <div className="flex-grow-1 overflow-hidden">
-
-                                                <p className="text-muted fs-13 text-truncate mb-0">
-                                                    Our pending marketing claims
-                                                </p>
-                                            </div>
-                                            <div className="flex-grow-1 overflow-hidden">
-                                                12
-                                            </div>
-                                            <div className="flex-grow-1 overflow-hidden">
-                                                11,25,0023
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li className="activity-list">
-                                        <div className="d-flex">
-                                            <div className="text-center me-1 flex-shrink-0">
-                                                <div className="avatar-sm">
-                                                    <span className="avatar-title rounded-circle bg-soft-primary text-primary">
-                                                        09
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <div className="flex-grow-1 overflow-hidden">
-
-                                                <p className="text-muted fs-13 text-truncate mb-0">
-                                                    Our pending marketing claims
-                                                </p>
-                                            </div>
-                                            <div className="flex-grow-1 overflow-hidden">
-                                                12
-                                            </div>
-                                            <div className="flex-grow-1 overflow-hidden">
-                                                11,25,0023
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li className="activity-list">
-                                        <div className="d-flex">
-                                            <div className="text-center me-1 flex-shrink-0">
-                                                <div className="avatar-sm">
-                                                    <span className="avatar-title rounded-circle bg-soft-primary text-primary">
-                                                        09
+                                                    <span className="avatar-title rounded-circle bg-soft-success text-success">
+                                                        <FontAwesomeIcon icon={faSackDollar} />
                                                     </span>
                                                 </div>
                                             </div>
