@@ -12,7 +12,8 @@ const Footer = () => {
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-md-6">
-                        2023 © Shreyu theme by <a href="/" style={{ color: '#fff' }}>T3DR</a>
+                        2023 ©  Toyota Kirloskar Motor. All Rights Reserved.
+
                     </div>
                     <div className="col-md-6">
                         <div className="text-md-end footer-links d-none d-sm-block">
