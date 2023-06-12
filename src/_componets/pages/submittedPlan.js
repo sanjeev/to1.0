@@ -25,18 +25,19 @@ const SubmittedPlan = () => {
                 </Col>
 
             </Row>
-            <div className='row'>
-                <div className="col-sm-3 mt-3">
-                    <div className="card">
-                        <div className="card-header bg-danger text-white">Filters</div>
-                        <div className="card-body">
-                            <div className="row mb-3">
+
+            <div className="">
+                <div className="card">
+                    <div className="card-header bg-danger text-white">Filters</div>
+                    <div className="card-body">
+                        <div className='row'>
+                            <div className="col-md-3 mb-3">
                                 <div className="col">
                                     <label className="form-label">Plan Id</label>
                                     <input type="text" className="form-control" />
                                 </div>
                             </div>
-                            <div className="row mb-3">
+                            <div className="col-md-3 mb-3">
                                 <div className="col">
                                     <label className="form-label">Plan/Claim Status</label>
                                     <MultiSelect
@@ -47,7 +48,7 @@ const SubmittedPlan = () => {
                                     />
                                 </div>
                             </div>
-                            <div className="row mb-3">
+                            <div className="col-md-3 mb-3">
                                 <div className="col">
                                     <label className="form-label">Plan Type</label>
                                     <div className="form-check">
@@ -75,7 +76,7 @@ const SubmittedPlan = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="row mb-3">
+                            <div className="col-md-3 mb-3">
                                 <div className="col">
                                     <label className="form-label">Activity Type</label>
                                     <div className="form-check">
@@ -103,7 +104,7 @@ const SubmittedPlan = () => {
                                     </div>
                                 </div>
                             </div>{" "}
-                            <div className="row mb-3">
+                            <div className="col-md-3 mb-3">
                                 <div className="col">
                                     <label className="form-label">Activity Sub Type</label>
                                     <select className="form-select" id="select1">
@@ -126,7 +127,7 @@ const SubmittedPlan = () => {
                                     </select>
                                 </div>
                             </div>
-                            <div className="row mb-3">
+                            <div className="col-md-3 mb-3">
                                 <div className="col">
                                     <label className="form-label">Targeted Models</label>
 
@@ -150,7 +151,7 @@ const SubmittedPlan = () => {
                           <input type="text" class="form-control" />
                       </div>
                   </div>*/}
-                            <div className="row mb-3">
+                            <div className="col-md-3 mb-3">
                                 <div className="col">
                                     <label className="form-label">Submitted Date From</label>
                                     <input
@@ -160,7 +161,7 @@ const SubmittedPlan = () => {
                                     />
                                 </div>
                             </div>
-                            <div className="row mb-3">
+                            <div className="col-md-3 mb-3">
                                 <div className="col">
                                     <label className="form-label">Submitted Date To</label>
                                     <input
@@ -173,30 +174,31 @@ const SubmittedPlan = () => {
                         </div>
                     </div>
                 </div>
-
-                <div className='col-md-9'>
-                    <div className="row align-items-center mt-4 mb-3" id="div1">
-                        <div className="col">
-                            <div className='cdl'>
+            </div>
+            <div className='row'>
+                <div>
+                    <div className="row align-items-center mt-1 mb-1" id="div1">
+                        <div className="col-md-3">
+                            <div className='cdl '>
                                 <input
-                                    className="form-check-input mb-3"
+                                    className="form-check-input "
                                     type="checkbox"
                                     name="flexRadioDefault"
                                 />{" "}
                                 Show Claims Waiting for Approval{" "}
                             </div>
                         </div>
-                        <div className="col">
+                        <div className="col-md-3">
                             <div className='cdl'>
                                 <input
-                                    className="form-check-input mb-3"
+                                    className="form-check-input"
                                     type="checkbox"
                                     name="flexRadioDefault"
                                 />{" "}
                                 Show Claims Approved
                             </div>
                         </div>
-                        <div className="col">
+                        <div className="col-md-3">
                             {/* <label class="form-label">Sort by</label>*/}
                             <select className="form-select" id="select2">
                                 <option value="First">Sort by</option>

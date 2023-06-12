@@ -12,7 +12,7 @@ const TaskItem = (props) => {
             <label className="custom-control-label" htmlFor={`task-${props.id}`}>
                 {props.title}
             </label>
-            <p className="font-size-13 text-muted m-0" >Due on {props.due_date}</p>
+            <p className="font-size-13 text-muted m-0" >{props.due_date}</p>
         </div>
     );
 };

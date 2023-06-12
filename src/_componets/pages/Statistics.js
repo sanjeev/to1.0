@@ -10,41 +10,476 @@ import StatisticsWidget from '../StatisticsWidget';
 import StatisticsProgressWidget from '../StatisticsProgressWidget';
 import StatisticsChartWidget from '../StatisticsChartWidget';
 import StatisticsChartWidget2 from '../StatisticsChartWidget2';
-
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBullhorn } from '@fortawesome/free-solid-svg-icons'
+import { faBell } from '@fortawesome/free-solid-svg-icons'
 import TaskList from '../TaskList';
 import TaskItem from '../TaskItem';
 const Statistics = () => {
     return <React.Fragment>
 
         <Row>
-            <Col md={6} xl={3}>
-                <StatisticsWidget description="Today Revenue" title="$2100" icon={FeatherIcon.ShoppingBag} iconClass="icon-dual-primary"></StatisticsWidget>
-                <StatisticsWidget description="Product Sold" title="1021" icon={FeatherIcon.Coffee} iconClass="icon-dual-warning"></StatisticsWidget>
-                <StatisticsWidget description="New Customers" title="11" icon={FeatherIcon.Users} iconClass="icon-dual-success"></StatisticsWidget>
-                <StatisticsWidget description="New Visitors" title="750" icon={FeatherIcon.FileText} iconClass="icon-dual-info"></StatisticsWidget>
-            </Col>
-            <Col md={6} xl={3}>
-                <StatisticsWidget description="Today Revenue" title="$2100" icon={FeatherIcon.ShoppingBag} iconClass="icon-dual-primary"></StatisticsWidget>
-                <StatisticsWidget description="Product Sold" title="1021" icon={FeatherIcon.Coffee} iconClass="icon-dual-warning"></StatisticsWidget>
-                <StatisticsWidget description="New Customers" title="11" icon={FeatherIcon.Users} iconClass="icon-dual-success"></StatisticsWidget>
-                <StatisticsWidget description="New Visitors" title="750" icon={FeatherIcon.FileText} iconClass="icon-dual-info"></StatisticsWidget>
-            </Col>
+            <Col md={6} xl={8}>
+                <Row>
+                    <Col md={6}>
+                        <div className="card">
+                            <div className="card-body">
+                                <h6 className="mt-0 header-title maincolor">Summary</h6>
+                                <ul className="list-unstyled activity-widget">
+                                    <li className="activity-list">
+                                        <div className="d-flex">
+                                            <div className="text-center me-1 flex-shrink-0">
+                                                <div className="avatar-sm">
+                                                    <span className="avatar-title rounded-circle bg-soft-primary text-primary">
+                                                        09
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div className="flex-grow-1 overflow-hidden">
 
-            <Col md={6} xl={6}>
+                                                <p className="text-muted fs-13 text-truncate mb-0">
+                                                    Our pending marketing claims
+                                                </p>
+                                            </div>
+                                            <div className="flex-grow-1 overflow-hidden">
+                                                12
+                                            </div>
+                                            <div className="flex-grow-1 overflow-hidden">
+                                                11,25,0023
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li className="activity-list">
+                                        <div className="d-flex">
+                                            <div className="text-center me-1 flex-shrink-0">
+                                                <div className="avatar-sm">
+                                                    <span className="avatar-title rounded-circle bg-soft-primary text-primary">
+                                                        09
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div className="flex-grow-1 overflow-hidden">
+
+                                                <p className="text-muted fs-13 text-truncate mb-0">
+                                                    Our pending marketing claims
+                                                </p>
+                                            </div>
+                                            <div className="flex-grow-1 overflow-hidden">
+                                                12
+                                            </div>
+                                            <div className="flex-grow-1 overflow-hidden">
+                                                11,25,0023
+                                            </div>
+                                        </div>
+                                    </li>
+
+
+                                </ul>
+
+                            </div>
+                        </div>
+
+
+
+                    </Col>
+                    <Col md={6}>
+
+                        <div className="card">
+                            <div className="card-body">
+                                <h6 className="mt-0 header-title"></h6>
+                                <ul className="list-unstyled activity-widget">
+                                    <li className="activity-list">
+                                        <div className="d-flex">
+                                            <div className="text-center me-1 flex-shrink-0">
+                                                <div className="avatar-sm">
+                                                    <span className="avatar-title rounded-circle bg-soft-primary text-primary">
+                                                        09
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div className="flex-grow-1 overflow-hidden">
+
+                                                <p className="text-muted fs-13 text-truncate mb-0">
+                                                    Our pending marketing claims
+                                                </p>
+                                            </div>
+                                            <div className="flex-grow-1 overflow-hidden">
+                                                12
+                                            </div>
+                                            <div className="flex-grow-1 overflow-hidden">
+                                                11,25,0023
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li className="activity-list">
+                                        <div className="d-flex">
+                                            <div className="text-center me-1 flex-shrink-0">
+                                                <div className="avatar-sm">
+                                                    <span className="avatar-title rounded-circle bg-soft-primary text-primary">
+                                                        09
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div className="flex-grow-1 overflow-hidden">
+
+                                                <p className="text-muted fs-13 text-truncate mb-0">
+                                                    Our pending marketing claims
+                                                </p>
+                                            </div>
+                                            <div className="flex-grow-1 overflow-hidden">
+                                                12
+                                            </div>
+                                            <div className="flex-grow-1 overflow-hidden">
+                                                11,25,0023
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                </ul>
+
+                            </div>
+                        </div>
+                    </Col>
+                </Row>
+
+                <Row>
+                    <Col md={6}>
+                        <div className="card">
+                            <div className="card-body">
+                                <h6 className="mt-0 header-title maincolor">Dealer claims Summary</h6>
+                                <ul className="list-unstyled activity-widget">
+                                    <li className="activity-list">
+                                        <div className="d-flex">
+                                            <div className="text-center me-1 flex-shrink-0">
+                                                <div className="avatar-sm">
+                                                    <span className="avatar-title rounded-circle bg-soft-primary text-primary">
+                                                        09
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div className="flex-grow-1 overflow-hidden">
+
+                                                <p className="text-muted fs-13 text-truncate mb-0">
+                                                    Our pending marketing claims
+                                                </p>
+                                            </div>
+                                            <div className="flex-grow-1 overflow-hidden">
+                                                12
+                                            </div>
+                                            <div className="flex-grow-1 overflow-hidden">
+                                                11,25,0023
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li className="activity-list">
+                                        <div className="d-flex">
+                                            <div className="text-center me-1 flex-shrink-0">
+                                                <div className="avatar-sm">
+                                                    <span className="avatar-title rounded-circle bg-soft-primary text-primary">
+                                                        09
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div className="flex-grow-1 overflow-hidden">
+
+                                                <p className="text-muted fs-13 text-truncate mb-0">
+                                                    Our pending marketing claims
+                                                </p>
+                                            </div>
+                                            <div className="flex-grow-1 overflow-hidden">
+                                                12
+                                            </div>
+                                            <div className="flex-grow-1 overflow-hidden">
+                                                11,25,0023
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li className="activity-list">
+                                        <div className="d-flex">
+                                            <div className="text-center me-1 flex-shrink-0">
+                                                <div className="avatar-sm">
+                                                    <span className="avatar-title rounded-circle bg-soft-primary text-primary">
+                                                        09
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div className="flex-grow-1 overflow-hidden">
+
+                                                <p className="text-muted fs-13 text-truncate mb-0">
+                                                    Our pending marketing claims
+                                                </p>
+                                            </div>
+                                            <div className="flex-grow-1 overflow-hidden">
+                                                12
+                                            </div>
+                                            <div className="flex-grow-1 overflow-hidden">
+                                                11,25,0023
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li className="activity-list">
+                                        <div className="d-flex">
+                                            <div className="text-center me-1 flex-shrink-0">
+                                                <div className="avatar-sm">
+                                                    <span className="avatar-title rounded-circle bg-soft-primary text-primary">
+                                                        09
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div className="flex-grow-1 overflow-hidden">
+
+                                                <p className="text-muted fs-13 text-truncate mb-0">
+                                                    Our pending marketing claims
+                                                </p>
+                                            </div>
+                                            <div className="flex-grow-1 overflow-hidden">
+                                                12
+                                            </div>
+                                            <div className="flex-grow-1 overflow-hidden">
+                                                11,25,0023
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li className="activity-list">
+                                        <div className="d-flex">
+                                            <div className="text-center me-1 flex-shrink-0">
+                                                <div className="avatar-sm">
+                                                    <span className="avatar-title rounded-circle bg-soft-primary text-primary">
+                                                        09
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div className="flex-grow-1 overflow-hidden">
+
+                                                <p className="text-muted fs-13 text-truncate mb-0">
+                                                    Our pending marketing claims
+                                                </p>
+                                            </div>
+                                            <div className="flex-grow-1 overflow-hidden">
+                                                12
+                                            </div>
+                                            <div className="flex-grow-1 overflow-hidden">
+                                                11,25,0023
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li className="activity-list">
+                                        <div className="d-flex">
+                                            <div className="text-center me-1 flex-shrink-0">
+                                                <div className="avatar-sm">
+                                                    <span className="avatar-title rounded-circle bg-soft-primary text-primary">
+                                                        09
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div className="flex-grow-1 overflow-hidden">
+
+                                                <p className="text-muted fs-13 text-truncate mb-0">
+                                                    Our pending marketing claims
+                                                </p>
+                                            </div>
+                                            <div className="flex-grow-1 overflow-hidden">
+                                                12
+                                            </div>
+                                            <div className="flex-grow-1 overflow-hidden">
+                                                11,25,0023
+                                            </div>
+                                        </div>
+                                    </li>
+
+
+                                </ul>
+
+                            </div>
+                        </div>
+
+
+
+                    </Col>
+                    <Col md={6}>
+
+                        <div className="card">
+                            <div className="card-body">
+                                <h6 className="mt-0 header-title maincolor">claims</h6>
+                                <ul className="list-unstyled activity-widget">
+                                    <li className="activity-list">
+                                        <div className="d-flex">
+                                            <div className="text-center me-1 flex-shrink-0">
+                                                <div className="avatar-sm">
+                                                    <span className="avatar-title rounded-circle bg-soft-primary text-primary">
+                                                        09
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div className="flex-grow-1 overflow-hidden">
+
+                                                <p className="text-muted fs-13 text-truncate mb-0">
+                                                    Our pending marketing claims
+                                                </p>
+                                            </div>
+                                            <div className="flex-grow-1 overflow-hidden">
+                                                12
+                                            </div>
+                                            <div className="flex-grow-1 overflow-hidden">
+                                                11,25,0023
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li className="activity-list">
+                                        <div className="d-flex">
+                                            <div className="text-center me-1 flex-shrink-0">
+                                                <div className="avatar-sm">
+                                                    <span className="avatar-title rounded-circle bg-soft-primary text-primary">
+                                                        09
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div className="flex-grow-1 overflow-hidden">
+
+                                                <p className="text-muted fs-13 text-truncate mb-0">
+                                                    Our pending marketing claims
+                                                </p>
+                                            </div>
+                                            <div className="flex-grow-1 overflow-hidden">
+                                                12
+                                            </div>
+                                            <div className="flex-grow-1 overflow-hidden">
+                                                11,25,0023
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li className="activity-list">
+                                        <div className="d-flex">
+                                            <div className="text-center me-1 flex-shrink-0">
+                                                <div className="avatar-sm">
+                                                    <span className="avatar-title rounded-circle bg-soft-primary text-primary">
+                                                        09
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div className="flex-grow-1 overflow-hidden">
+
+                                                <p className="text-muted fs-13 text-truncate mb-0">
+                                                    Our pending marketing claims
+                                                </p>
+                                            </div>
+                                            <div className="flex-grow-1 overflow-hidden">
+                                                12
+                                            </div>
+                                            <div className="flex-grow-1 overflow-hidden">
+                                                11,25,0023
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li className="activity-list">
+                                        <div className="d-flex">
+                                            <div className="text-center me-1 flex-shrink-0">
+                                                <div className="avatar-sm">
+                                                    <span className="avatar-title rounded-circle bg-soft-primary text-primary">
+                                                        09
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div className="flex-grow-1 overflow-hidden">
+
+                                                <p className="text-muted fs-13 text-truncate mb-0">
+                                                    Our pending marketing claims
+                                                </p>
+                                            </div>
+                                            <div className="flex-grow-1 overflow-hidden">
+                                                12
+                                            </div>
+                                            <div className="flex-grow-1 overflow-hidden">
+                                                11,25,0023
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li className="activity-list">
+                                        <div className="d-flex">
+                                            <div className="text-center me-1 flex-shrink-0">
+                                                <div className="avatar-sm">
+                                                    <span className="avatar-title rounded-circle bg-soft-primary text-primary">
+                                                        09
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div className="flex-grow-1 overflow-hidden">
+
+                                                <p className="text-muted fs-13 text-truncate mb-0">
+                                                    Our pending marketing claims
+                                                </p>
+                                            </div>
+                                            <div className="flex-grow-1 overflow-hidden">
+                                                12
+                                            </div>
+                                            <div className="flex-grow-1 overflow-hidden">
+                                                11,25,0023
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li className="activity-list">
+                                        <div className="d-flex">
+                                            <div className="text-center me-1 flex-shrink-0">
+                                                <div className="avatar-sm">
+                                                    <span className="avatar-title rounded-circle bg-soft-primary text-primary">
+                                                        09
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div className="flex-grow-1 overflow-hidden">
+
+                                                <p className="text-muted fs-13 text-truncate mb-0">
+                                                    Our pending marketing claims
+                                                </p>
+                                            </div>
+                                            <div className="flex-grow-1 overflow-hidden">
+                                                12
+                                            </div>
+                                            <div className="flex-grow-1 overflow-hidden">
+                                                11,25,0023
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </div>
+                    </Col>
+                </Row>
+
+                {/* <StatisticsWidget description="Today Revenue" title="$2100" icon={FeatherIcon.ShoppingBag} iconClass="icon-dual-primary"></StatisticsWidget>
+                <StatisticsWidget description="Product Sold" title="1021" icon={FeatherIcon.Coffee} iconClass="icon-dual-warning"></StatisticsWidget>
+                <StatisticsWidget description="New Customers" title="11" icon={FeatherIcon.Users} iconClass="icon-dual-success"></StatisticsWidget>
+                <StatisticsWidget description="New Visitors" title="750" icon={FeatherIcon.FileText} iconClass="icon-dual-info"></StatisticsWidget> */}
+            </Col>
+            {/* <Col md={6} xl={2}>
+                <StatisticsWidget description="Today Revenue" title="$2100" icon={FeatherIcon.ShoppingBag} iconClass="icon-dual-primary"></StatisticsWidget>
+                <StatisticsWidget description="Product Sold" title="1021" icon={FeatherIcon.Coffee} iconClass="icon-dual-warning"></StatisticsWidget>
+                <StatisticsWidget description="New Customers" title="11" icon={FeatherIcon.Users} iconClass="icon-dual-success"></StatisticsWidget>
+                <StatisticsWidget description="New Visitors" title="750" icon={FeatherIcon.FileText} iconClass="icon-dual-info"></StatisticsWidget>
+            </Col> */}
+
+
+            <Col md={6} xl={4}>
                 <Card>
                     <CardBody className="pt-2 pb-3">
-                        {/* <Button className="float-right mt-2" size={'sm'} color="primary">
-                            View All
-                        </Button> */}
-                        <h5 className="mb-3" style={{ fontWeight: '900' }}>Alert Message</h5>
+                        <div className='alusment mb-2'>
+
+                            <h5 className="maincolor" style={{ fontWeight: '900' }}>
+                                <FontAwesomeIcon icon={faBell} /> Alert Message</h5>
+                            <Button className="float-right" size={'sm'} color="primary">
+                                View All
+                            </Button>
+                        </div>
                         <PerfectScrollbar style={{ maxHeight: '339px' }}>
                             <TaskList>
-                                <TaskItem title='Draft the new contract document for sales team' due_date="24 Aug, 2019" />
-                                <TaskItem title='iOS App home page' due_date="23 Aug, 2019" className="mt-2" />
-                                <TaskItem title='Write a release note for Shreyu' due_date="24 Aug, 2019" className="mt-2" />
-                                <TaskItem title='Invite Greeva to a project shreyu admin' due_date="22 Aug, 2019" className="mt-2" />
-                                <TaskItem title='Enable analytics tracking for main website' due_date="20 Aug, 2019" className="mt-2" />
+                                <TaskItem title='Draft the new contract document for sales team' due_date="24 Aug" />
+                                <TaskItem title='iOS App home page' due_date="23 Aug" className="mt-2" />
+                                <TaskItem title='Write a release note for Shreyu' due_date="24 Aug" className="mt-2" />
+                                <TaskItem title='Invite Greeva to a project shreyu admin' due_date="22 Aug" className="mt-2" />
+                                <TaskItem title='Enable analytics tracking for main website' due_date="20 Aug" className="mt-2" />
+                                <TaskItem title='Invite Greeva to a project shreyu admin' due_date="22 Aug" className="mt-2" />
+                                <TaskItem title='Enable analytics tracking for main website' due_date="20 Aug" className="mt-2" />
                                 {/* <TaskItem title='Invite user to a project' due_date="18 Aug, 2019" className="mt-2" />
                                 <TaskItem title='Write a release note' due_date="14 Aug, 2019" className="mt-2" /> */}
                             </TaskList>
@@ -53,17 +488,22 @@ const Statistics = () => {
                 </Card>
                 <Card>
                     <CardBody className="pt-2 pb-3">
-                        {/* <Button className="float-right mt-2" size={'sm'} color="primary">
-                            View All
-                        </Button> */}
-                        <h5 className="mb-4" style={{ fontWeight: '900' }}>News & Announcements</h5>
+                        <div className='alusment mb-2'>
+                            <h5 className="maincolor" style={{ fontWeight: '900' }}><FontAwesomeIcon icon={faBullhorn} />  News & Announcements</h5>
+                            <Button className="float-right" size={'sm'} color="primary">
+                                View All
+                            </Button>
+
+                        </div>
                         <PerfectScrollbar style={{ maxHeight: '339px' }}>
                             <TaskList>
-                                <TaskItem title='Draft the new contract document for sales team' due_date="24 Aug, 2019" />
-                                <TaskItem title='iOS App home page' due_date="23 Aug, 2019" className="mt-2" />
-                                <TaskItem title='Write a release note for Shreyu' due_date="24 Aug, 2019" className="mt-2" />
-                                <TaskItem title='Invite Greeva to a project shreyu admin' due_date="22 Aug, 2019" className="mt-2" />
-                                <TaskItem title='Enable analytics tracking for main website' due_date="20 Aug, 2019" className="mt-2" />
+                                <TaskItem title='Draft the new contract document for sales team' due_date="24 Aug" />
+                                <TaskItem title='iOS App home page' due_date="23 Aug" className="mt-2" />
+                                <TaskItem title='Write a release note for Shreyu' due_date="24 Aug" className="mt-2" />
+                                <TaskItem title='Invite Greeva to a project shreyu admin' due_date="22 Aug" className="mt-2" />
+                                <TaskItem title='Enable analytics tracking for main website' due_date="20 Aug" className="mt-2" />
+                                <TaskItem title='Invite Greeva to a project shreyu admin' due_date="22 Aug" className="mt-2" />
+                                <TaskItem title='Enable analytics tracking for main website' due_date="20 Aug" className="mt-2" />
                                 {/* <TaskItem title='Invite user to a project' due_date="18 Aug, 2019" className="mt-2" />
                                 <TaskItem title='Write a release note' due_date="14 Aug, 2019" className="mt-2" /> */}
                             </TaskList>

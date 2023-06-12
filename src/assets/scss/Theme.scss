@@ -56,7 +56,30 @@ span.badge.bg-success {
     font-size: 15px;
     font-weight: 900;
 }
-.grop{
-    max-height: 729px;
-    overflow-y: scroll;
+
+.alusment{
+    display: flex;
+    justify-content: space-between;
+}
+.footer {
+    bottom: 0;
+    padding: 19px 15px 20px;
+    position: absolute;
+    right: 0;
+    color: #fff;
+    left: 250px;
+    border-top: 1px solid #ff0000;
+    background: #ff0000;
+}
+.footer .footer-links a {
+    color: #fff;
+    margin-left: 1.5rem;
+    transition: all 0.4s;
+}
+.d-flex {
+    display: flex !important;
+    align-items: center;
+}
+.maincolor{
+    color: #ff0000;
 }

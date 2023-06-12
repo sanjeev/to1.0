@@ -1,17 +1,94 @@
-import React, { useEffect, Component } from 'react'
+import React, { useState, useEffect, Component } from 'react'
 import FeatherIcons from "feather-icons-react";
 import { Link } from "react-router-dom";
 import logoDark from "../../../assets/images/logo-dark.png";
 import logosm from "../../../assets/images/logo-sm.png";
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBullhorn } from '@fortawesome/free-solid-svg-icons'
+import { faBell } from '@fortawesome/free-solid-svg-icons'
 import T3dr from "../../../assets/images/T3dr.png";
+import avatar from "../../../assets/images/users/avatar-1.jpg";
+import FeatherIcon from "feather-icons-react";
+import { Dropdown } from "react-bootstrap";
+import classNames from "classnames";
+import { commonData } from '../../../redux/actions';
+import { useDispatch, useSelector } from "react-redux";
 
 const Header = () => {
+    const dispatch = useDispatch();
+    const info = useSelector((state) => {
+        return state.commonData.common;
+    })
+    console.log(info);
     const toggleLeftSidebarWidth = () => {
-        document.body.setAttribute("data-sidebar-size", "condensed");
+        if (info.menu === 'condensed') {
+
+            document.body.setAttribute("data-sidebar-size", "default");
+            const common = {
+                ...info,
+                menu: 'default',
+            }
+            dispatch(commonData(common))
+        }
+        if (info.menu === 'default') {
+            document.body.setAttribute("data-sidebar-size", "condensed");
+            const common = {
+                ...info,
+                menu: 'condensed',
+            }
+            dispatch(commonData(common))
+        }
+
 
     };
-
+    const [dropdownOpen, setDropdownOpen] = useState(false);
+    const toggleDropdown = () => {
+        setDropdownOpen(!dropdownOpen);
+    };
+    const ProfileMenus = [
+        {
+            label: "My Account",
+            icon: "user",
+            redirectTo: "/",
+        },
+        {
+            label: "Lock Screen",
+            icon: "lock",
+            redirectTo: "/auth/lock-screen",
+        },
+        {
+            label: "Logout",
+            icon: "log-out",
+            redirectTo: "/auth/logout",
+        },
+    ];
+    const otherOptions = [
+        {
+            id: 1,
+            label: "New Projects",
+            icon: "uil uil-bag",
+        },
+        {
+            id: 2,
+            label: "Create Users",
+            icon: "uil uil-user-plus",
+        },
+        {
+            id: 3,
+            label: "Revenue Report",
+            icon: "uil uil-chart-pie",
+        },
+        {
+            id: 4,
+            label: "Settings",
+            icon: "uil uil-cog",
+        },
+        {
+            id: 4,
+            label: "Help & Support",
+            icon: "uil uil-question-circle",
+        },
+    ];
     return (
         <>
             <div className="navbar-custom">
@@ -20,7 +97,7 @@ const Header = () => {
                         <li className="d-none d-lg-block">
                             <form className="app-search">
                                 <div className="app-search-box dropdown">
-                                    <div className="input-group">
+                                    {/* <div className="input-group">
                                         <input
                                             type="search"
                                             className="form-control"
@@ -30,7 +107,7 @@ const Header = () => {
                                         <button className="btn input-group-text" type="submit">
                                             <i className="uil uil-search" />
                                         </button>
-                                    </div>
+                                    </div> */}
                                     <div className="dropdown-menu dropdown-lg" id="search-dropdown">
                                         {/* item*/}
                                         <div className="dropdown-header noti-title">
@@ -142,28 +219,7 @@ const Header = () => {
                                 </form>
                             </div>
                         </li>
-                        <li className="dropdown d-none d-lg-inline-block">
-                            <a
-                                className="nav-link dropdown-toggle arrow-none"
-                                data-toggle="fullscreen"
-                                href="#"
-                            >
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width={24}
-                                    height={24}
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    strokeWidth={2}
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    className="feather feather-maximize"
-                                >
-                                    <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3" />
-                                </svg>
-                            </a>
-                        </li>
+
                         <li className="dropdown d-none d-lg-inline-block topbar-dropdown">
                             <a
                                 className="nav-link dropdown-toggle arrow-none"
@@ -173,23 +229,7 @@ const Header = () => {
                                 aria-haspopup="false"
                                 aria-expanded="false"
                             >
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width={24}
-                                    height={24}
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    strokeWidth={2}
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    className="feather feather-grid"
-                                >
-                                    <rect x={3} y={3} width={7} height={7} />
-                                    <rect x={14} y={3} width={7} height={7} />
-                                    <rect x={14} y={14} width={7} height={7} />
-                                    <rect x={3} y={14} width={7} height={7} />
-                                </svg>
+                                <FontAwesomeIcon icon={faBullhorn} />
                             </a>
                             <div className="dropdown-menu dropdown-lg dropdown-menu-end p-0">
                                 <div className="p-1">
@@ -216,85 +256,7 @@ const Header = () => {
                                 </div>
                             </div>
                         </li>
-                        <li className="dropdown d-none d-lg-inline-block topbar-dropdown">
-                            <a
-                                className="nav-link dropdown-toggle arrow-none"
-                                data-bs-toggle="dropdown"
-                                href="#"
-                                role="button"
-                                aria-haspopup="false"
-                                aria-expanded="false"
-                            >
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width={24}
-                                    height={24}
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    strokeWidth={2}
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    className="feather feather-globe"
-                                >
-                                    <circle cx={12} cy={12} r={10} />
-                                    <line x1={2} y1={12} x2={22} y2={12} />
-                                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-                                </svg>
-                            </a>
-                            <div className="dropdown-menu dropdown-menu-end">
-                                {/* item*/}
-                                <a href="javascript:void(0);" className="dropdown-item">
-                                    <img
-                                        src="assets/images/flags/us.jpg"
-                                        alt="user-image"
-                                        className="me-1"
-                                        height={12}
-                                    />
-                                    <span className="align-middle">English</span>
-                                </a>
-                                {/* item*/}
-                                <a href="javascript:void(0);" className="dropdown-item">
-                                    <img
-                                        src="assets/images/flags/germany.jpg"
-                                        alt="user-image"
-                                        className="me-1"
-                                        height={12}
-                                    />
-                                    <span className="align-middle">German</span>
-                                </a>
-                                {/* item*/}
-                                <a href="javascript:void(0);" className="dropdown-item">
-                                    <img
-                                        src="assets/images/flags/italy.jpg"
-                                        alt="user-image"
-                                        className="me-1"
-                                        height={12}
-                                    />
-                                    <span className="align-middle">Italian</span>
-                                </a>
-                                {/* item*/}
-                                <a href="javascript:void(0);" className="dropdown-item">
-                                    <img
-                                        src="assets/images/flags/spain.jpg"
-                                        alt="user-image"
-                                        className="me-1"
-                                        height={12}
-                                    />
-                                    <span className="align-middle">Spanish</span>
-                                </a>
-                                {/* item*/}
-                                <a href="javascript:void(0);" className="dropdown-item">
-                                    <img
-                                        src="assets/images/flags/russia.jpg"
-                                        alt="user-image"
-                                        className="me-1"
-                                        height={12}
-                                    />
-                                    <span className="align-middle">Russian</span>
-                                </a>
-                            </div>
-                        </li>
+
                         <li className="dropdown notification-list topbar-dropdown">
                             <a
                                 className="nav-link dropdown-toggle position-relative"
@@ -304,21 +266,7 @@ const Header = () => {
                                 aria-haspopup="false"
                                 aria-expanded="false"
                             >
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width={24}
-                                    height={24}
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    strokeWidth={2}
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    className="feather feather-bell"
-                                >
-                                    <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
-                                    <path d="M13.73 21a2 2 0 0 1-3.46 0" />
-                                </svg>
+                                <FontAwesomeIcon icon={faBell} />
                                 <span className="badge bg-danger rounded-circle noti-icon-badge">
                                     6
                                 </span>
@@ -477,109 +425,57 @@ const Header = () => {
                                 </a>
                             </div>
                         </li>
+
                         <li className="dropdown notification-list topbar-dropdown">
-                            <a
-                                className="nav-link dropdown-toggle nav-user me-0"
-                                data-bs-toggle="dropdown"
-                                href="#"
-                                role="button"
-                                aria-haspopup="false"
-                                aria-expanded="false"
-                            >
-                                <img
-                                    src="assets/images/users/avatar-1.jpg"
-                                    alt="user-image"
-                                    className="rounded-circle"
-                                />
-                                <span className="pro-user-name ms-1">
-                                    Nik Patel <i className="uil uil-angle-down" />
-                                </span>
-                            </a>
-                            <div className="dropdown-menu dropdown-menu-end profile-dropdown ">
-                                {/* item*/}
-                                <div className="dropdown-header noti-title">
-                                    <h6 className="text-overflow m-0">Welcome !</h6>
-                                </div>
-                                <a href="pages-profile.html" className="dropdown-item notify-item">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width={24}
-                                        height={24}
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        strokeWidth={2}
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        className="feather feather-user icon-dual icon-xs me-1"
-                                    >
-                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                                        <circle cx={12} cy={7} r={4} />
-                                    </svg>
-                                    <span>My Account</span>
-                                </a>
-                                <a
-                                    href="pages-lock-screen.html"
-                                    className="dropdown-item notify-item"
+                            <Dropdown show={dropdownOpen} onToggle={toggleDropdown}>
+                                <Dropdown.Toggle
+                                    id="dropdown-profile"
+                                    as="a"
+                                    onClick={toggleDropdown}
+                                    className={classNames(
+                                        "nav-link",
+                                        "nav-user",
+                                        "me-0",
+                                        "cursor-pointer",
+                                        { show: dropdownOpen }
+                                    )}
                                 >
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width={24}
-                                        height={24}
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        strokeWidth={2}
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        className="feather feather-lock icon-dual icon-xs me-1"
-                                    >
-                                        <rect x={3} y={11} width={18} height={11} rx={2} ry={2} />
-                                        <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-                                    </svg>
-                                    <span>Lock Screen</span>
-                                </a>
-                                <div className="dropdown-divider" />
-                                <a href="pages-logout.html" className="dropdown-item notify-item">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width={24}
-                                        height={24}
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        strokeWidth={2}
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        className="feather feather-log-out icon-dual icon-xs me-1"
-                                    >
-                                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
-                                        <polyline points="16 17 21 12 16 7" />
-                                        <line x1={21} y1={12} x2={9} y2={12} />
-                                    </svg>
-                                    <span>Logout</span>
-                                </a>
-                            </div>
+                                    <img src={avatar} className="rounded-circle" alt="" />
+                                    <span className="pro-user-name ms-2">
+                                        T3DW <i className="uil uil-angle-down"></i>
+                                    </span>
+                                </Dropdown.Toggle>
+                                <Dropdown.Menu className="dropdown-menu-end profile-dropdown">
+                                    <div onClick={toggleDropdown}>
+                                        <div className="dropdown-header noti-title">
+                                            <h6 className="text-overflow m-0">Welcome !</h6>
+                                        </div>
+                                        {(ProfileMenus || []).map((item, i) => {
+                                            return (
+                                                <React.Fragment key={i}>
+                                                    {i === item.length - 1 && (
+                                                        <div className="dropdown-divider"></div>
+                                                    )}
+                                                    <Link
+                                                        to={item.redirectTo}
+                                                        className="dropdown-item notify-item"
+                                                        key={i + "-profile-menu"}
+                                                    >
+                                                        <FeatherIcon
+                                                            icon={item.icon}
+                                                            className="icon-dual icon-xs me-1"
+                                                        />
+                                                        <span>{item.label}</span>
+                                                    </Link>
+                                                </React.Fragment>
+                                            );
+                                        })}
+                                    </div>
+                                </Dropdown.Menu>
+                            </Dropdown>
                         </li>
-                        <li className="dropdown notification-list">
-                            <a href="javascript:void(0);" className="nav-link right-bar-toggle">
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width={24}
-                                    height={24}
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    strokeWidth={2}
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    className="feather feather-settings"
-                                >
-                                    <circle cx={12} cy={12} r={3} />
-                                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
-                                </svg>
-                            </a>
-                        </li>
+
+
                     </ul>
                     {/* LOGO */}
                     <div className="logo-box">
@@ -642,10 +538,79 @@ const Header = () => {
                             <img src={T3dr} alt="" height={50} style={{ margin: '15px 0px 0px' }} />
 
                         </li>
+                        <li className="dropdown d-none d-xl-block">
+                            <a
+                                className="nav-link dropdown-toggle"
+                                data-bs-toggle="dropdown"
+                                href="#"
+                                role="button"
+                                aria-haspopup="false"
+                                aria-expanded="false"
+                            >
+                                Marketing Reimbusement
+                                <i className="uil uil-angle-down" />
+                            </a>
+                            {/* <div className="dropdown-menu" style={{}}>
+
+                                <a href="javascript:void(0);" className="dropdown-item">
+                                    <i className="uil uil-bag me-1" />
+                                    <span>New Projects</span>
+                                </a>
+
+                                <a href="javascript:void(0);" className="dropdown-item">
+                                    <i className="uil uil-user-plus me-1" />
+                                    <span>Create Users</span>
+                                </a>
+
+                                <a href="javascript:void(0);" className="dropdown-item">
+                                    <i className="uil uil-chart-pie me-1" />
+                                    <span>Revenue Report</span>
+                                </a>
+
+                                <a href="javascript:void(0);" className="dropdown-item">
+                                    <i className="uil uil-cog me-1" />
+                                    <span>Settings</span>
+                                </a>
+                                <div className="dropdown-divider" />
+
+                                <a href="javascript:void(0);" className="dropdown-item">
+                                    <i className="uil uil-question-circle me-1" />
+                                    <span>Help &amp; Support</span>
+                                </a>
+                            </div> */}
+                        </li>
+                        <li className="dropdown d-none d-xl-block">
+                            <a
+                                className="nav-link dropdown-toggle"
+                                data-bs-toggle="dropdown"
+                                href="#"
+                                role="button"
+                                aria-haspopup="false"
+                                aria-expanded="false"
+                            >
+                                Discounts
+                                <i className="uil uil-angle-down" />
+                            </a>
+                        </li>
+                        <li className="dropdown d-none d-xl-block">
+                            <a
+                                className="nav-link dropdown-toggle"
+                                data-bs-toggle="dropdown"
+                                href="#"
+                                role="button"
+                                aria-haspopup="false"
+                                aria-expanded="false"
+                            >
+                                Admin
+                                <i className="uil uil-angle-down" />
+                            </a>
+                        </li>
+
+
                     </ul>
                     <div className="clearfix" />
                 </div>
-            </div>
+            </div >
 
             {/* end Topbar */}
         </>
