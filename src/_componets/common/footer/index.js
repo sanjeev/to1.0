@@ -12,7 +12,7 @@ const Footer = () => {
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-md-6">
-                        2023 ©  Toyota Kirloskar Motor. All Rights Reserved.
+                        2000-2023 ©  Toyota Kirloskar Motor. All Rights Reserved.
 
                     </div>
                     <div className="col-md-6">
